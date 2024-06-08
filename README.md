@@ -14,19 +14,18 @@ The PSO algorithm is used to find the optimal P, I, D and Event Triggering Thres
 - Run `python3 run.py` if on Linux or Mac
 - Run `python run.py` if on Windows
 
-</br>
+<br/>
 Watch the algorithm learn the weights...
-</br>
-![EVOLUTION OF WEIGHTS (I)](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/c19dc745-c7f8-440a-bd58-47fed76854c6)
+<br/>
+![EVOLUTION OF WEIGHTS (I)](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/883c3bf5-5b35-4a74-9183-24bc4d922abf)
+<br/>
 
-</br>
-</br>
+<br/>
 Comparisons between Event Triggered Control and Time Triggered Control...
-</br>
-![COMPARISONS](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/8e0103e8-294a-49d2-8d92-0d4417fb4491)
+<br/>
+![COMPARISONS](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/eb61fa5a-38ec-42cb-b524-773da172099d)
+<br/>
 
-</br>
-</br>
 ## Configurations
 
 All the parameters for Bot, Event Triggered Control PSO Member and PSO training itself have been defined in `\SOURCE\utilities.py` as follows:
