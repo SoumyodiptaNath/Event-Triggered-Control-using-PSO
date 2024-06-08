@@ -17,12 +17,14 @@ The PSO algorithm is used to find the optimal P, I, D and Event Triggering Thres
 </br>
 Watch the algorithm learn the weights...
 </br>
-![EVOLUTION OF WEIGHTS (I)](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/90b9ea75-41c9-407a-bf20-e2ce99295af9)
+![EVOLUTION OF WEIGHTS (I)](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/c19dc745-c7f8-440a-bd58-47fed76854c6)
+
 </br>
 </br>
 Comparisons between Event Triggered Control and Time Triggered Control...
 </br>
-![COMPARISONS](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/b1495dbc-73ab-4c97-a8d9-62eb32ff38a5)
+![COMPARISONS](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/8e0103e8-294a-49d2-8d92-0d4417fb4491)
+
 </br>
 </br>
 ## Configurations
