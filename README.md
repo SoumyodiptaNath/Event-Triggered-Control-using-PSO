@@ -14,12 +14,16 @@ The PSO algorithm is used to find the optimal P, I, D and Event Triggering Thres
 - Run `python3 run.py` if on Linux or Mac
 - Run `python run.py` if on Windows
 
+</br>
 Watch the algorithm learn the weights...
+</br>
 ![EVOLUTION OF WEIGHTS (I)](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/90b9ea75-41c9-407a-bf20-e2ce99295af9)
-![EVOLUTION OF WEIGHTS (thresh)](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/ebf5ddf6-be31-4926-a37b-9e6ee1af3812)
+</br>
 </br>
 Comparisons between Event Triggered Control and Time Triggered Control...
+</br>
 ![COMPARISONS](https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/b1495dbc-73ab-4c97-a8d9-62eb32ff38a5)
+</br>
 </br>
 ## Configurations
 
