@@ -1,76 +1,104 @@
+# Smart Bot Control: Event-Triggered PID Tuning with PSO
 
-# Event Triggered Control with Particle Swarm Optimization
+This project demonstrates an intelligent control strategy where a path-following robot is optimized using **Particle Swarm Optimization (PSO)**.
 
-A Python interface for training optimal control parameters using Particle Swarm Optimization for Event Triggered Control of a Path Following Bot Simulation.
-
-The PSO algorithm is used to find the optimal P, I, D and Event Triggering Threshold (Thresh) values for controlling the bot, where the control input is fedback only when the weighted sum of error in current input and last input provided exceeds the Thresh. The path is randomly generated using Perlin Noise.
+The simulation, built with PyGame, showcases how PSO can discover the optimal PID gains and, more importantly, an **event-triggering threshold**. This allows the robot to operate efficiently, updating its control signals only when necessary, rather than at every fixed time interval. The result is a robust and resource-conscious control system.
 
 
-## Usage/Examples
 
-- Download the project repository to your local machine
-- Navigate to the project directory using `cd`
-- Install dependencies using `pip install -r requirements.txt`
-- Run `python3 run.py` if on Linux or Mac
-- Run `python run.py` if on Windows
+## 🌟 Key Features
 
-<center>
-Watch the algorithm learn the weights...<br/><br/>
-<kbd><img src="https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/883c3bf5-5b35-4a74-9183-24bc4d922abf)"> </kbd>
+-   **Particle Swarm Optimization**: Intelligently searches for the best PID gains (`Kp`, `Ki`, `Kd`) and the event-triggering threshold.
+-   **Event-Triggered Control (ETC)**: Reduces unnecessary control updates, saving computational resources compared to traditional time-triggered systems.
+-   **Dynamic Path Generation**: The robot follows a complex, unpredictable path generated using Perlin Noise.
+-   **PyGame Simulation**: Provides a clear and interactive visualization of the bot's behavior and the learning process.
+
+## 🤖 See it in Action
+
+Watch as the PSO algorithm refines the control parameters over generations, teaching the bot to follow the path with increasing precision.
+
+**PSO Training Process**
+<kbd><img src="https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/883c3bf5-5b35-4a74-9183-24bc4d922abf" alt="PSO Training GIF"> </kbd>
 <br/><br/>
-Comparisons between Event Triggered Control and Time Triggered Control...<br/><br/>
-<kbd><img src="https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/eb61fa5a-38ec-42cb-b524-773da172099d"></kbd>
+
+**ETC vs. Traditional Control**
+Notice how the Event-Triggered bot (right) achieves the same performance as the Time-Triggered bot (left) but with significantly fewer control updates (indicated by the red flashes).
+
+<kbd><img src="https://github.com/SoumyodiptaNath/Event_Triggered_Control_using_PSO/assets/122808862/eb61fa5a-38ec-42cb-b524-773da172099d" alt="ETC vs TTC Comparison GIF"></kbd>
 <br/><br/>
-</center>
 
-## Configurations
+## 🚀 Getting Started
 
-All the parameters for Bot, Event Triggered Control PSO Member and PSO training itself have been defined in `\SOURCE\utilities.py` as follows:
+### 1. Prerequisites
 
-- Pygame Simulation Parameters:
+-   Python 3.x
+-   Git
+
+### 2. Installation & Setup
+
+Clone the repository and install the required dependencies.
+
+```bash
+# Clone the repository
+git clone [https://github.com/your-username/Event_Triggered_Control_using_PSO.git](https://github.com/your-username/Event_Triggered_Control_using_PSO.git)
+
+# Navigate to the project directory
+cd Event_Triggered_Control_using_PSO
+
+# Install dependencies
+pip install -r requirements.txt
+````
+
+### 3\. Run the Simulation
+
+Execute the main script to start the simulation and training process.
+
+```bash
+# On Linux or macOS
+python3 run.py
+
+# On Windows
+python run.py
+```
+
+## 🔧 Configuration
+
+All key parameters for the simulation, the bot, and the PSO algorithm are centralized in `SOURCE/utilities.py`. You can modify them directly in the file to experiment with different behaviors.
+
+#### Pygame Simulation Parameters (`game_params`)
+
+  - `x_screen`: Width of the simulation window.
+  - `y_screen`: Height of the simulation window.
+  - `bot_radius`: Visual size of the bot.
+  - `Q`: Weighting matrix for determining ETC triggers.
+  - `dt`: Simulation time step duration.
+
+#### PSO Member Parameters (`etc_pso_params`)
+
+  - `dt`: Time step for the individual bot simulation.
+  - `init_guess`: Central values for the initial random swarm positions (PID gains, Threshold).
+  - `max_iter`: Maximum simulation steps for a single bot's evaluation.
+  - `range_var`: The spread around `init_guess` for initial particle positions.
+  - `Q_err`: Weighting matrix for calculating the bot's path deviation error.
+
+#### PSO Algorithm Parameters (`pso_params`)
+
+  - `num_bots`: The number of particles (bots) in the swarm.
+  - `learning_rate`: Cognitive and social learning rates (`c1`, `c2`).
+  - `num_steps`: The maximum number of PSO iterations (generations).
+
+## 🛠️ Tech Stack & Concepts
+
+  - **Algorithm**: Particle Swarm Optimization (PSO)
+  - **Control Theory**: Event-Triggered Control (ETC), PID Control
+  - **Simulation**: PyGame
+  - **Core Language**: Python (NumPy)
+  - **Concepts**: Numerical Methods, Physics Simulation, Optimization
+
+## 🤝 Contributing
+
+Contributions are always welcome\!
+
+This project is open to contributions, bug reports, and suggestions. If you've found a bug, have an idea for an improvement, or want to add a new feature, please feel free to open an issue or submit a pull request.
 
 ```
-game_params = {
-    x_screen: Width of simulation Wndow
-    y_screen: Height of simulation Window
-    bot_radius: Radius of the Bot 
-    Q: Weights for determining ETC triggers
-    dt: Value of one time step
-}
-```
-
-- ETC PSO Member Parameters:
-
-```
-etc_pso_params = {
-    dt: Value of one time step
-    init_guess: Initial Guess for PSO
-    Q_ETC: Weights for determining ETC triggers
-    max_iter: Max no. of iterations for simulation
-    range_var: Range of variables randomly chosen around init_guess
-    Q_err: Weights for determining current linear & angular deviations
-}
-```
-
-- PSO Training Parameters:
-
-```
-pso_params = {
-    num_bots: Number of particles in PSO
-    learning_rate: Cognitive & Social Learning Rates
-    num_steps: Number of max iterations for PSO training
-}
-```
-All of these can be accessed in `run.py` for modifications as per requirement.
-
-
-## Contributing
-
-Contributions are always welcome!
-
-This project is open to contributions, bug reports, and suggestions. If you've found a bug or have a suggestion, please open an issue.
-
-
-## 🛠 Skills
-Particle Swarm Optimisation, Event Trigger Control, Linear Control Systems, Numerical Methods, Physics Simulation, Python, PyGame
-
