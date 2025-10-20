@@ -101,4 +101,3 @@ Contributions are always welcome\!
 
 This project is open to contributions, bug reports, and suggestions. If you've found a bug, have an idea for an improvement, or want to add a new feature, please feel free to open an issue or submit a pull request.
 
-```
